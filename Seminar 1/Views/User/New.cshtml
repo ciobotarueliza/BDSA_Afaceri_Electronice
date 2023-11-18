@@ -1,0 +1,11 @@
+﻿@model UserVM
+
+@{
+    ViewData["Title"] = "Create a user";
+}
+
+@{
+    ViewBag.IsNew = true;
+}
+
+@await Html.PartialAsync(@"../Shared/Components/_User.cshtml")

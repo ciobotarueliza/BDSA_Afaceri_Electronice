@@ -1,0 +1,128 @@
+﻿@model ProductVM
+
+@{
+    string action = "";
+    var isNew = (bool)ViewBag.IsNew;
+    if (isNew)
+        action = "/Product/New";
+    else
+        action = string.Format("/Product/Edit/{0}", Model.Id);
+}
+
+<div class="row">
+    <div class="col-md-1"></div>
+    <div class="col-md-10 table-round bg-light shadow">
+
+        <br />
+        <h4>Product type</h4>
+        <br />
+
+        <div class="col-xl-12">
+
+            <input asp-for="Id" hidden />
+
+            <form action="@action" method="post" enctype="multipart/form-data">
+
+                <div asp-validation-summary="All" class="text-danger"></div>
+                <br />
+                <div class="row">
+
+                    <div class="col-sm-12 col-lg-12">
+
+                        <div class="row">
+
+                            <div class="col-xs-12 col-sm-2">
+                                <label class="control-label font-weight-bold">Product name</label>
+                            </div>
+
+                            <div class="col-xs-12 col-sm-4">
+                                <input asp-for="Name" class="form-control" /><br />
+                                <span asp-validation-for="Name" class="text-danger"></span>
+                            </div>
+
+                            <div class="col-xs-12 col-sm-2">
+                                <label class="control-label font-weight-bold">Price</label>
+                            </div>
+
+                            <div class="col-xs-12 col-sm-4">
+                                <input asp-for="Price" class="form-control" /><br />
+                                <span asp-validation-for="Price" class="text-danger"></span>
+                            </div>
+
+                        </div>
+
+                        <div class="row">
+
+                            <div class="col-xs-12 col-sm-2">
+                                <label class="control-label font-weight-bold">Is available</label>
+                            </div>
+
+                            <div class="col-xs-12 col-sm-4">
+                                <input type="checkbox" asp-for="IsAvailable" /><br />
+                                <span asp-validation-for="IsAvailable" class="text-danger"></span>
+                            </div>                                                 
+
+                        </div>
+
+                        <br />
+
+                        <div class="row">
+
+                            <div class="col-xs-12 col-sm-2">
+                                <label class="control-label font-weight-bold">Upload a image</label>
+                            </div>
+
+                            <div class="col-xs-12 col-sm-4">
+                                <input id="fileInput" type="file" asp-for="ProducImage" class="custom-file-input" onchange="Product.onChangeFile(event)" /><br />
+                                <label id="fileUploadlabel" class="custom-file-label" for="fileInput">Choose file</label>
+                                <span asp-validation-for="ProducImage" class="text-danger"></span>
+                            </div>
+
+                        </div>
+
+                        <br />
+
+                        <div class="row">
+
+                            <div class="col-xs-12 col-sm-2">
+                                <label class="control-label font-weight-bold">Description</label>
+                            </div>
+
+                            <div class="col-xs-12 col-sm-10">
+                                @Html.TextArea("Description", Model.Description, new { @class = "form-control" })
+                                <span asp-validation-for="Description" class="text-danger"></span>
+                            </div>
+
+                        </div>
+
+                        <br />
+
+                        @if (!isNew)
+                        {
+
+                            <div class="row">
+
+                                <div class="col-xs-12 col-sm-2">
+                                    <label class="control-label font-weight-bolg">Product image</label>
+                                </div>
+
+                                <div class="col-xs-12 col-sm-10">
+                                   <img style="width:300px; height:150px;" src="~/@Model.ImagePath" alt="nu exista imagine peste acest produs" />
+                                </div>
+
+                            </div>
+
+                        }
+
+                    </div>
+
+                    @await Html.PartialAsync(@"_CancelSaveBtn.cshtml");
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+</div>

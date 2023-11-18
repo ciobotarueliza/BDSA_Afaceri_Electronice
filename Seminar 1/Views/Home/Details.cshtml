@@ -1,0 +1,88 @@
+﻿@using Seminar_1.Models.Entities;
+@model Product
+
+@inject IHttpContextAccessor HttpContextAccessor
+@{
+    bool isInBag = false;
+    var lstCart = HttpContextAccessor.HttpContext.Session.Get<List<int>>(SessionHelper.ShoppingCart);
+    if (lstCart != null && lstCart.Contains(Model.Id))
+        isInBag = true;
+
+    var route = isInBag ? "/Remove/{0}" : "/Add/{0}";
+    route = string.Format(route, Model.Id);
+}
+
+<h2 class="text-info">Product Details</h2>
+
+<form action="@route" method="post">
+
+    <div class="p-4 border rounded row">
+        <div class="col-8">
+
+            <div class="form-group row">
+                <div class="col-4">
+                    <label>Product name</label>
+                </div>
+                <div class="col-4">
+                    <input asp-for="Name" readonly class="form-control" />
+                </div>
+            </div>
+
+            <br />
+
+            <div class="form-group row">
+                <div class="col-4">
+                    <label>Price</label>
+                </div>
+                <div class="col-4">
+                    <input asp-for="Price" readonly class="form-control" />
+                </div>
+            </div>
+
+            <br />
+
+            <div class="form-group row">
+                <div class="col-4">
+                    <label>Description</label>
+                </div>
+                <div class="col-4">
+                    @Html.TextArea("Description", Model.Description, new { @class = "form-control", @readonly="readonly" })
+                </div>
+            </div>
+
+            <br />
+
+            <div class="form-group row">
+                <div class="col-4"></div>
+                <div class="col-4"></div>
+                <div class="col-8">
+                    @if (isInBag)
+                    {
+                        <button type="submit" value="Remove from bag" class="btn btn-danger form-control">Remove from Bag</button>
+                    }
+                    else
+                    {
+                        <button type="submit" value="Add to bag" class="btn btn-primary form-control">Add to Bag</button>
+                    }
+                </div>
+            </div>
+
+        </div>
+
+        <br />
+
+        <div class=" col-1">
+        </div>
+
+        <div class="col-3">
+            <img src="~/@Model.ImagePath" alt="no image" width="100%" style="border-radius:5px; border:1px solid #bbb9b9;" />
+        </div>
+    </div>
+
+    <br />
+
+    <div class="form-group">
+        <a asp-action="Index" class="btn btn-success">Back to List</a>
+    </div>
+
+</form>

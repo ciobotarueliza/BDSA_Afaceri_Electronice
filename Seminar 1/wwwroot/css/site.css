@@ -1,0 +1,164 @@
+/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
+for details on configuring this project to bundle and minify static web assets. */
+
+a.navbar-brand {
+    white-space: normal;
+    text-align: center;
+    word-break: break-all;
+}
+
+/* Provide sufficient contrast against white background */
+a {
+    color: #0366d6;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #1b6ec2;
+    border-color: #1861ac;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+    color: #fff;
+    background-color: #1b6ec2;
+    border-color: #1861ac;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+.border-top {
+    border-top: 1px solid #e5e5e5;
+}
+
+.border-bottom {
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.box-shadow {
+    box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+button.accept-policy {
+    font-size: 1rem;
+    line-height: inherit;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    /* Margin bottom by footer height */
+    margin-bottom: 60px;
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    white-space: nowrap;
+    line-height: 60px; /* Vertically center the text there */
+}
+
+.grid {
+    border-style: none !important;
+    background-color: white;
+    min-height: 5em;
+}
+
+.gridContainer {
+    min-width: 520px;
+}
+
+.btn-new {
+    background-color: aquamarine;
+    border-radius: 5px;
+}
+
+.btn-outline-new {
+    color: #000000;
+}
+
+    .btn-outline-new:hover {
+        color: #000000;
+        background-color: #fff;
+        border-color: aquamarine;
+    }
+
+    .btn-outline-new.focus, .btn-outline-new:focus {
+        box-shadow: 0 0 0 0.2rem #3DA28C;
+    }
+
+.btn-delete {
+    background-color: #F44336;
+    border-radius: 5px;
+    color: #FFF;
+}
+
+.btn-outline-delete {
+    color: #FFF;
+}
+
+    .btn-outline-delete:hover {
+        color: #F44336;
+        background-color: #fff;
+        border-color: #F44336;
+    }
+
+    .btn-outline-delete.focus, .btn-outline-delete:focus {
+        box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, .5);
+    }
+
+.operationButtons {
+    min-width: 520px;
+}
+
+.table-hover tbody tr:hover td {
+    background-color: aqua;
+    color: black;
+}
+
+.tableSelectedRow {
+    --bs-table-bg: #F0E68C !important;
+    --bs-table-striped-bg: #F0E68C !important;
+    color: black;
+}
+
+.modal-header {
+    color: #fff;
+    background-color: #1b6ec2;
+}
+
+    .modal-header .close {
+        color: #fff;
+        font-size: 2.2rem;
+    }
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+.startChecked {
+    color: orange;
+}

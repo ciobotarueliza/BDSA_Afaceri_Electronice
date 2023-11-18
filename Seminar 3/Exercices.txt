@@ -1,0 +1,1 @@
+1. Sa se integreze in aplicatia de cumparaturi plata cu PayPal iar aceasta sa se faca in functie de produsele din cos selectate de utilizator.

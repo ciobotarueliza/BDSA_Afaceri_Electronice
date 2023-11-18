@@ -1,0 +1,5 @@
+1. Sa se imbunatateasca metoda de cumparaturi astfel incat sa pot adauga mai multe produse si sa pot sterge din cosul de cumparaturi mai multe produse.
+
+2. Sa se defineasca o metoda pentru hash parola sau encoder parola.
+
+3. Sa se preia utilizatori din baza de date.

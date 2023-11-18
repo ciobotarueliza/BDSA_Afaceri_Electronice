@@ -1,0 +1,11 @@
+1. Sa se creeze un tip special care sa fie atribuit unui produs. Pentru acest tip special sa se faca operatiile CRUD de citire, adaugare, editare si stergere.
+Acest tip este mandatory pentru crearea unui produs. 
+
+2. Sa se adauge pe produse un filtru care sa tina cont de tipul de produs.
+
+Exemplu:
+
+Definim tipurile de produs: haine, mancare, jocuri.
+Daca avem 10 produse astfel: 5 din categoria jocuri, 2 haine si 3 mancare cand filtram dupa haine vom vedea in pagina web doar cele 3 produse care au tipul haina.
+
+3. Crearea unei pagini pentru definirea utilizatorilor

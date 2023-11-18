@@ -1,0 +1,52 @@
+﻿@model IEnumerable<UserVM>
+
+@{
+    ViewData["Title"] = "Product";
+}
+
+<div class="row mb-2 mt-2 operationsButtons">
+    <div class="col-md-12">
+        <a href="/User/New" class="btn btn-new btn-outline-new font-weight-bold mr-2" data-toggle="tooltip" title="New" data-placement="top">
+            <span class="fa fa-plus-circle"></span>
+        </a>
+
+        <button class="btn btn-outline-dark font-weight-bold mr-2" data-toggle="tooltip" title="Edit" data-placement="top" onclick="User.onEditBtnPress()">
+            <span class="fa fa-edit"></span>
+        </button>
+
+        <button type="button" class="btn btn-delete btn-outline-delete font-weight-bold mr-2" id="btnDelete" data-toggle="tooltip" data-placement="top" title="Delete" onclick="User.onDelete()">
+            <span class="fa fa-trash"></span>
+        </button>
+    </div>
+</div>
+
+<br />
+<br />
+
+<table id="table" class="table table-hover table-striped table-dark">
+    <thead>
+        <tr>
+            <th hidden>User Id</th>
+            <th>UserName</th>
+            <th>SurName</th>
+            <th>Name</th>
+            <th>Last Login</th>
+        </tr>
+    </thead>
+
+    <tbody>
+
+        @foreach (var item in Model)
+        {
+            <tr id="@item.Id">
+                <td hidden>@item.Id</td>
+                <td>@item.UserName</td>
+                <td>@item.SurName</td>
+                <td>@item.Name</td>
+                <td>@item.LastLogin</td>
+            </tr>
+        }
+
+    </tbody>
+
+</table>
